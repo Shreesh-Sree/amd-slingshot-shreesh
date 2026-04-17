@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: amd-sling-shreesh
+  PROJECT_ID: amd-slingshot-shreesh
   SERVICE_NAME: nexus-retail
   REGION: us-central1
   ARTIFACT_REPOSITORY: containers

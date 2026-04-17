@@ -1,6 +1,6 @@
 #!/bin/bash
 # GCP Project Configuration
-PROJECT_ID="amd-sling-shreesh"
+PROJECT_ID="amd-slingshot-shreesh"
 SERVICE_ACCOUNT_NAME="github-actions-deployer"
 POOL_NAME="github-pool"
 PROVIDER_NAME="github-provider"
