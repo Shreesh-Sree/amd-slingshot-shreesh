@@ -1,0 +1,27 @@
+{
+    "mcpServers": {
+        "context7": {
+            "command": "/home/shreesh/.nvm/versions/node/v24.13.1/bin/npx",
+            "args": [
+                "-y",
+                "@upstash/context7-mcp",
+                "--api-key",
+                "YOUR_API_KEY"
+            ],
+            "env": {
+                "PATH": "/home/shreesh/.nvm/versions/node/v24.13.1/bin:/usr/local/bin:/usr/bin:/bin"
+            }
+        },
+        "shadcn": {
+            "command": "/home/shreesh/.nvm/versions/node/v24.13.1/bin/npx",
+            "args": [
+                "shadcn@latest",
+                "mcp"
+            ],
+            "env": {
+                "PATH": "/home/shreesh/.nvm/versions/node/v24.13.1/bin:/usr/local/bin:/usr/bin:/bin"
+            }
+        }
+    }
+}
+

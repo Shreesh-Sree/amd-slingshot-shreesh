@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ─── NEXUSRETAIL DESIGN SYSTEM ─── */
+/* Style: Liquid Glass | Fonts: Rubik + Nunito Sans */
+/* Palette: Dark premium with gold CTA accents */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-heading: 'Rubik', sans-serif;
+  --font-body: 'Nunito Sans', sans-serif;
+}
+
+:root {
+  --background: #FAFAF9;
+  --foreground: #0C0A09;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255, 255, 255, 0.72);
+  --primary: #1C1917;
+  --secondary: #44403C;
+  --cta: #CA8A04;
+  --cta-hover: #A16207;
+  --muted: #78716C;
+  --border: rgba(28, 25, 23, 0.08);
+  --ring: #CA8A04;
+  --success: #16A34A;
+  --danger: #DC2626;
+}
+
+.dark {
+  --background: #050508;
+  --foreground: #F5F5F4;
+  --surface: #0C0A09;
+  --surface-glass: rgba(12, 10, 9, 0.65);
+  --primary: #F5F5F4;
+  --secondary: #A8A29E;
+  --border: rgba(245, 245, 244, 0.06);
+}
+
+/* ─── BASE RESETS ─── */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body[data-reduced-motion="true"] *,
+body[data-reduced-motion="true"] ::before,
+body[data-reduced-motion="true"] ::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ─── LIQUID GLASS UTILITIES ─── */
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--border);
+}
+
+.glass-strong {
+  background: var(--surface-glass);
+  backdrop-filter: blur(40px) saturate(1.6);
+  -webkit-backdrop-filter: blur(40px) saturate(1.6);
+  border: 1px solid var(--border);
+}
+
+/* ─── FOCUS RING (WCAG 2.1 AA) ─── */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ─── CTA BUTTON ─── */
+.btn-cta {
+  background: var(--cta);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0.875rem 2rem;
+  border-radius: 1rem;
+  transition: background 200ms ease, transform 100ms ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-cta:hover {
+  background: var(--cta-hover);
+}
+.btn-cta:active {
+  transform: scale(0.97);
+}
+.btn-cta:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 999px;
+}
+
+/* ─── SKELETON LOADING ─── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, transparent 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: 0.75rem;
+}
